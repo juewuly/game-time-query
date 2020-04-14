@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <% for (var jsIndex in htmlWebpackPlugin.files.js) { %>
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[jsIndex] %>"></script>
+  <% } %>
+
+  <script>
+    const params = {
+      qid: '3079295110',
+      appkey: 'syyyh5',
+      source: 'html_game'
+    };
+
+    GameTimeQuery.Instance
+    .fetch(params)
+    .then(res => console.log('succuss', res))
+    .catch(err => console.err('error', err));
+  </script>
+</body>
+</html>
