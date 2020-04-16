@@ -52,8 +52,8 @@ fetch方法用于拉取游戏时长信息，返回promise。
 | 名称 | 类型 | 描述 | 默认值 |
 | --- | --- | --- | --- |
 | qid | `String`（必填） | 用户id | --- |
-| appkey | `String` | 游戏的key | --- |
-| source | `String` | 来源（sdk_game | page_game | html_game） | --- |
+| appkey | `String`（必填） | 游戏的key | --- |
+| source | `String`（必填） | 来源（sdk_game、page_game、html_game） | --- |
 
 #### 返回值
 | 名称 | 类型 | 描述 |
