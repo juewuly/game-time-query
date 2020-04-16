@@ -9,7 +9,13 @@
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "prepublish": "npm run build"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:juewuly/game-time-query.git"
+  },
+  "keywords": [
+    "game-time-query"
+  ],
   "author": "liuyang9",
   "license": "ISC",
   "devDependencies": {
