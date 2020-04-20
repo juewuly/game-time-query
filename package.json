@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "fetch-jsonp": "^1.1.3"
   }
 }

@@ -14,13 +14,14 @@
     const params = {
       qid: '3079295110',
       appkey: 'syyyh5',
-      source: 'html_game'
+      source: 'html_game',
+      isJsonp: true
     };
 
     GameTimeQuery.Instance
     .fetch(params)
     .then(res => console.log('succuss', res))
-    .catch(err => console.err('error', err));
+    .catch(err => console.error('error', err));
   </script>
 </body>
 </html>

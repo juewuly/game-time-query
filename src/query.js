@@ -3,7 +3,7 @@
  * description: 游戏时长查询
  */
 
-import { fetchGameTime } from './request';
+import { fetchGameTime, jsonpFetchGameTime } from './request';
 
 export default class Query {
   constructor() {
@@ -22,9 +22,11 @@ export default class Query {
    * 查询游戏时长
    * @param {*} param0 {qid: 用户id, appkey: 游戏的key, source: 平台来源}
    */
-  fetch({ qid, appkey, source }) {
+  fetch({ qid, appkey, source, isJsonp }) {
+    const fetchFunc = isJsonp ? jsonpFetchGameTime : fetchGameTime;
+
     return new Promise((resolve, reject) => {
-      fetchGameTime({ qid, appkey, source })
+      fetchFunc({ qid, appkey, source })
       .then(res => {
         if (res.errno !== 0) {
           reject(res);
