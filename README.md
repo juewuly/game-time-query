@@ -36,7 +36,8 @@ $ npm i game-time-query -S
   const params = {
     qid: 'qid',
     appkey: 'qppkey',
-    source: 'source'
+    source: 'source',
+    isJsonp: true
   }
 
   Instance.fetch(params)
@@ -54,6 +55,7 @@ fetch方法用于拉取游戏时长信息，返回promise。
 | qid | `String`（必填） | 用户id | --- |
 | appkey | `String`（必填） | 游戏的key | --- |
 | source | `String`（必填） | 来源（sdk_game、page_game、html_game） | --- |
+| isJsonp | `Boolean` | 是否用jsonp方式请求 | false |
 
 #### 返回值
 | 名称 | 类型 | 描述 |
