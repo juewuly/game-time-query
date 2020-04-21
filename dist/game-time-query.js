@@ -172,13 +172,18 @@ class Query {
         appkey,
         source
       }).then(res => {
-        if (res.errno !== 0) {
-          reject(res);
+        let data = null;
+
+        if (isJsonp) {
+          data = res;
+        } else {
+          data = res.data;
+
+          if (res.errno !== 0) {
+            reject(res);
+          }
         }
 
-        const {
-          data
-        } = res;
         const result = {
           // 开关是否开启
           isOpen: data.timeout_switch === '1' ? true : false,
