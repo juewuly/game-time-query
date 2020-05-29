@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -7,20 +8,19 @@ module.exports = {
     'game-time-query.min': './src/index.js'
   },
   output: {
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
+    chunkFilename: '[name].js',
     library: 'GameTimeQuery',
     libraryTarget: 'umd',
     libraryExport: 'default'
   },
-  mode: 'none',
+  mode: 'production',
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        include: /\.min\.js$/,
-        terserOptions: {
-          ie8: true
-        }
+        include: /\.min\.js$/
       })
     ]
   },
@@ -32,5 +32,12 @@ module.exports = {
         use: 'babel-loader'
       }
     ]
+  },
+  plugins: [
+    new CleanWebpackPlugin()
+  ],
+  resolve: {
+    extensions: ['.js'],
+    mainFields: ['main']
   }
 }
