@@ -3028,7 +3028,7 @@ var jsonpFetchGameTime_jsonpFetchGameTime = function jsonpFetchGameTime(_ref) {
         qid: qid,
         appkey: appkey,
         source: source,
-        posterkey: posterkey ? appkey : ''
+        posterkey: posterkey ? posterkey : ''
       }
     }).then(function (response) {
       var data = response.data;
