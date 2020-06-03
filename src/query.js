@@ -20,13 +20,13 @@ export default class Query {
 
   /**
    * 查询游戏时长
-   * @param {*} param0 {qid: 用户id, appkey: 游戏的key, source: 平台来源}
+   * @param {*} param0 {qid: 用户id, appkey: 游戏的key, source: 平台来源, posterkey: 海报key}
    */
-  fetch({ qid, appkey, source, isJsonp }) {
+  fetch({ qid, appkey, source, posterkey, isJsonp }) {
     const fetchFunc = isJsonp ? jsonpFetchGameTime : fetchGameTime;
 
     return new Promise((resolve, reject) => {
-      fetchFunc({ qid, appkey, source })
+      fetchFunc({ qid, appkey, source, posterkey })
       .then(res => {
         let data = null;
 

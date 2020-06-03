@@ -2958,9 +2958,10 @@ var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 var fetchGameTime_fetchGameTime = function fetchGameTime(_ref) {
   var qid = _ref.qid,
       appkey = _ref.appkey,
-      source = _ref.source;
+      source = _ref.source,
+      posterkey = _ref.posterkey;
   return new Promise(function (resolve, reject) {
-    axios_default.a.get("/api/timeout?qid=".concat(qid, "&appkey=").concat(appkey, "&source=").concat(source)).then(function (response) {
+    axios_default.a.get("/api/timeout?qid=".concat(qid, "&appkey=").concat(appkey, "&source=").concat(source, "&posterkey=").concat(posterkey)).then(function (response) {
       var data = response.data;
       resolve(data);
     })["catch"](function (error) {
@@ -3018,14 +3019,16 @@ var jsonpGet_jsonpGet = function jsonpGet(_ref) {
 var jsonpFetchGameTime_jsonpFetchGameTime = function jsonpFetchGameTime(_ref) {
   var qid = _ref.qid,
       appkey = _ref.appkey,
-      source = _ref.source;
+      source = _ref.source,
+      posterkey = _ref.posterkey;
   return new Promise(function (resolve, reject) {
     request_jsonpGet({
       url: '/api/timeout',
       params: {
         qid: qid,
         appkey: appkey,
-        source: source
+        source: source,
+        posterkey: posterkey ? appkey : ''
       }
     }).then(function (response) {
       var data = response.data;
@@ -3060,19 +3063,21 @@ var query_Query = /*#__PURE__*/function () {
 
     /**
      * 查询游戏时长
-     * @param {*} param0 {qid: 用户id, appkey: 游戏的key, source: 平台来源}
+     * @param {*} param0 {qid: 用户id, appkey: 游戏的key, source: 平台来源, posterkey: 海报key}
      */
     value: function fetch(_ref) {
       var qid = _ref.qid,
           appkey = _ref.appkey,
           source = _ref.source,
+          posterkey = _ref.posterkey,
           isJsonp = _ref.isJsonp;
       var fetchFunc = isJsonp ? request_jsonpFetchGameTime : request_fetchGameTime;
       return new Promise(function (resolve, reject) {
         fetchFunc({
           qid: qid,
           appkey: appkey,
-          source: source
+          source: source,
+          posterkey: posterkey
         }).then(function (res) {
           var data = null;
 

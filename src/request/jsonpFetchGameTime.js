@@ -1,13 +1,14 @@
 import jsonpGet from './jsonpGet'
 
-const jsonpFetchGameTime = ({ qid, appkey, source }) => {
+const jsonpFetchGameTime = ({ qid, appkey, source, posterkey }) => {
   return new Promise((resolve, reject) => {
     jsonpGet({
       url: '/api/timeout',
       params: {
         qid,
         appkey,
-        source
+        source,
+        posterkey: posterkey ? appkey : ''
       }
     })
     .then(response => {
