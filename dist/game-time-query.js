@@ -2982,7 +2982,7 @@ var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
 // CONCATENATED MODULE: ./src/request/jsonpGet.js
 
 
-var HOST = 'http://pulsar.mgame.360.cn';
+var HOST = '//pulsar.mgame.360.cn';
 
 var jsonpGet_jsonpGet = function jsonpGet(_ref) {
   var url = _ref.url,

@@ -1,7 +1,7 @@
 import fetchJsonp from 'fetch-jsonp';
 import qs from 'qs';
 
-const HOST = 'http://pulsar.mgame.360.cn'
+const HOST = '//pulsar.mgame.360.cn'
 
 const jsonpGet = ({ 
   url, 
