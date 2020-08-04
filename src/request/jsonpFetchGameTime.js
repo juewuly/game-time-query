@@ -8,7 +8,8 @@ const jsonpFetchGameTime = ({ qid, appkey, source, posterkey }) => {
         qid,
         appkey,
         source,
-        posterkey: posterkey ? posterkey : ''
+        posterkey: posterkey ? posterkey : '',
+        ts: new Date().getTime()
       }
     })
     .then(response => {
